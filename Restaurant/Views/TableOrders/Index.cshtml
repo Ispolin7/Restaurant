@@ -4,62 +4,57 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Time)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Message)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Time)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Message)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<section class="ftco-section" id="table">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-12 pb-12">
+                <h3 class=" heading-pricing ftco-animate">Заброньовані столики</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ftco-animate col-md-2 mb-2 pb-2">
+                <h5><span>Ім'я</span></h5>
+            </div>
+            <div class="pricing-entry d-flex ftco-animate col-md-2 mb-2 pb-2">
+                <h5><span>Призвище</span></h5>
+            </div>
+            <div class="pricing-entry d-flex ftco-animate col-md-2 mb-2 pb-2">
+                <h5><span>Дата</span></h5>
+            </div>
+            <div class="pricing-entry d-flex ftco-animate col-md-1 mb-1 pb-1">
+                <h5><span>Час</span></h5>
+            </div>
+            <div class="pricing-entry d-flex ftco-animate col-md-2 mb-2 pb-2">
+                <h5><span>Телефон</span></h5>
+            </div>
+            <div class="pricing-entry d-flex ftco-animate col-md-3 mb-3 pb-3">
+                <h5><span>Побажання</span></h5>
+            </div>
+            <hr>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="pricing-entry d-flex ftco-animate col-md-2 mb-2 pb-2">
+                    <p>@Html.DisplayFor(modelItem => item.FirstName)</p>
+                </div>
+                <div class="pricing-entry d-flex ftco-animate col-md-2 mb-2 pb-2">
+                    <p>@Html.DisplayFor(modelItem => item.LastName)</p>
+                </div>
+                <div class="pricing-entry d-flex ftco-animate col-md-2 mb-2 pb-2">
+                    <p>@Html.DisplayFor(modelItem => item.Date)</p>
+                </div>
+                <div class="pricing-entry d-flex ftco-animate col-md-1 mb-1 pb-1">
+                    <p>@Html.DisplayFor(modelItem => item.Time)</p>
+                </div>
+                <div class="pricing-entry d-flex ftco-animate col-md-2 mb-2 pb-2">
+                    <p>@Html.DisplayFor(modelItem => item.Phone)</p>
+                </div>
+                <div class="pricing-entry d-flex ftco-animate col-md-3 mb-3 pb-3">
+                    <p>@Html.DisplayFor(modelItem => item.Message)</p>
+                </div>
+                <hr>
+            </div>
+        }
+    </div>
+</section>                       

@@ -14,11 +14,13 @@ namespace Restaurant.Data.Entities
         [Required]
         public string LastName { get; set; }
         [Required]
-        public DateTime Date { get; set; }
+        //public DateTime Date { get; set; }
+        public string Date { get; set; }
         [Required]
-        public TimeSpan Time { get; set; }
+        public string Time { get; set; }
         [Required]
         public string Phone { get; set; }
+        [MaxLength(5000)]
         public string Message { get; set; }
     }
 }

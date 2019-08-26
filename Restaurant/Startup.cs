@@ -57,6 +57,7 @@ namespace Restaurant
                 app.UseHsts();
             }
 
+            app.Seed();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
